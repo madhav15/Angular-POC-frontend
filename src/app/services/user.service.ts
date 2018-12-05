@@ -1,4 +1,4 @@
-pimport { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../user';
 
@@ -8,7 +8,7 @@ import { User } from '../user';
 })
 export class UserService {
 
-  private baseUrl : string = 'http://ec2-52-14-223-140.us-east-2.compute.amazonaws.com:8080/api';
+  private baseUrl : string = 'http://ec2-3-16-203-41.us-east-2.compute.amazonaws.com:8080/api';
 
   private headers = new HttpHeaders({"Content_Type":"application/json"});
 
