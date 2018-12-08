@@ -8,7 +8,9 @@ import { User } from '../user';
 })
 export class UserService {
 
-  private baseUrl : string = 'http://ec2-18-220-231-127.us-east-2.compute.amazonaws.com:9090/api';
+  // private baseUrl : string = 'http://ec2-18-220-231-127.us-east-2.compute.amazonaws.com:9090/api';
+
+  private baseUrl : string = 'http://localhost:9090/rest';
 
   private headers = new HttpHeaders({"Content_Type":"application/json"});
 
@@ -17,23 +19,23 @@ export class UserService {
   constructor( private http: HttpClient) { }
 
   getUsers() {
-    return this.http.get(this.baseUrl + '/users');
+    return this.http.get(this.baseUrl + '/employees');
   }
 
   getUser(id: number) {
-    return this.http.get(this.baseUrl + '/users/' + id);
+    return this.http.get(this.baseUrl + '/employee/' + id);
   }
 
   deleteUser(id: number) {
-    return this.http.delete(this.baseUrl + '/users/' + id);
+    return this.http.delete(this.baseUrl + '/employee/' + id);
   }
 
   createUser( user: User) {
-    return this.http.post(this.baseUrl + '/user', user, {headers: this.headers});
+    return this.http.post(this.baseUrl + '/employee', user, {headers: this.headers});
   }
 
   updateUser( user: User) {
-    return this.http.put(this.baseUrl + '/user', user, {headers: this.headers});
+    return this.http.put(this.baseUrl + '/employee', user, {headers: this.headers});
   }
   
   setter(user:User){

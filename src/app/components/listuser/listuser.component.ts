@@ -20,7 +20,7 @@ export class ListuserComponent implements OnInit {
       console.log(users);
       this.usersData = users;
     }, (error)=> {
-      console.log(error);
+      alert("Some Error occured " + error);
     });
   }
 
@@ -29,6 +29,7 @@ export class ListuserComponent implements OnInit {
     this.usersData.splice(this.usersData.indexOf(user), 1);
     }, (error)=> {
       console.log(error);
+      alert("Error while deleting employee " + error);
     });
   }
 

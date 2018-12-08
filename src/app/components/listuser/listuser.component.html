@@ -3,18 +3,22 @@
 
 <table class="table table-striped">
   <thead>
-      <th>Id</th>
+      <th>Employee Id</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Mobile Number</th>
+      <th>Total Experience</th>
+      <th>Designation</th>
       <th>Operations</th>
   </thead>
   <tbody>
     <tr *ngFor="let user of usersData">
-      <td>{{ user.id }}</td>
+      <td>{{ user.employeeId }}</td>
       <td>{{ user.firstName }}</td>
       <td>{{ user.lastName }}</td>
       <td>{{ user.mobileNumber }}</td>
+      <td>{{ user.yearsOfExperience }}</td>
+      <td>{{ user.designation }}</td>
       <td><button class="btn btn-danger" (click)="deleteUser(user)">Delete</button> &nbsp;
       <button class="btn btn-primary" (click)="updateUser(user)">Edit</button></td>
     </tr>
