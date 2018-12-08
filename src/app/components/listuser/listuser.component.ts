@@ -12,6 +12,7 @@ import { Router } from '@angular/router'
 export class ListuserComponent implements OnInit {
 
   public usersData : User[];
+  searchTerm : string;
 
   constructor(private userService: UserService, private router : Router) { }
 

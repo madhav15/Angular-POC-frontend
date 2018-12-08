@@ -1,5 +1,19 @@
 <div class="container">
-<h1 class="display-3">Users</h1>
+
+<div>
+    <h1 class="display-4">Type to search...</h1>
+</div>
+
+<div class="form-group">
+  <input type="text" class="form-control"  placeholder="Search by Designstion"
+          style="widows: 300px;" [(ngModel)]="searchTerm" />
+</div>
+
+
+<div>
+    <h1 class="display-3">Users</h1>
+</div>
+
 
 <table class="table table-striped">
   <thead>
@@ -12,7 +26,7 @@
       <th>Operations</th>
   </thead>
   <tbody>
-    <tr *ngFor="let user of usersData">
+    <tr *ngFor="let user of usersData  | employeeFilter:searchTerm">
       <td>{{ user.employeeId }}</td>
       <td>{{ user.firstName }}</td>
       <td>{{ user.lastName }}</td>

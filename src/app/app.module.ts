@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { ListuserComponent } from './components/listuser/listuser.component';
 import { UserformComponent } from './components/userform/userform.component';
 import { UserService } from './services/user.service';
+import { EmployeeFilterPipe } from './services/employee-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListuserComponent,
-    UserformComponent
+    UserformComponent,
+    EmployeeFilterPipe
   ],
   imports: [
     BrowserModule,
