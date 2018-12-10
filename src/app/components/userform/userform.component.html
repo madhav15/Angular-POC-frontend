@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="display-3">Add/Update User</h1>
-  <form (ngSubmit)="processForm()">
+  <form #employeeForm="ngForm" (ngSubmit)="processForm()">
 
     <div class="form-group">
       <input type="hidden" name="id" class="form-control" [(ngModel)]="user.id">
@@ -66,7 +66,7 @@
       </span>
     </div>
 
-    <input type="submit" value="Save" class="btn btn-success">
+    <input type="submit" value="Save" class="btn btn-success" [disabled]="employeeForm.invalid">
     &nbsp;
     <button class="btn btn-danger" (click)="back()">Cancel</button>
   </form>
