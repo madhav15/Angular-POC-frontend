@@ -1,22 +1,21 @@
 <div class="container">
 
-<div>
+  <div>
     <h1 class="display-4">Type to search...</h1>
-</div>
+  </div>
 
-<div class="form-group">
-  <input type="text" class="form-control"  placeholder="Search by Designstion"
-          style="widows: 300px;" [(ngModel)]="searchTerm" />
-</div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search by Designstion" style="widows: 300px;" [(ngModel)]="searchTerm" />
+  </div>
 
 
-<div>
+  <div>
     <h1 class="display-3">Users</h1>
-</div>
+  </div>
 
 
-<table class="table table-striped">
-  <thead>
+  <table class="table table-striped">
+    <thead>
       <th>Employee Id</th>
       <th>First Name</th>
       <th>Last Name</th>
@@ -24,19 +23,19 @@
       <th>Total Experience</th>
       <th>Designation</th>
       <th>Operations</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of usersData  | employeeFilter:searchTerm">
-      <td>{{ user.employeeId }}</td>
-      <td>{{ user.firstName }}</td>
-      <td>{{ user.lastName }}</td>
-      <td>{{ user.mobileNumber }}</td>
-      <td>{{ user.yearsOfExperience }}</td>
-      <td>{{ user.designation }}</td>
-      <td><button class="btn btn-danger" (click)="deleteUser(user)">Delete</button> &nbsp;
-      <button class="btn btn-primary" (click)="updateUser(user)">Edit</button></td>
-    </tr>
-  </tbody>
-</table>
-<td><button class="btn btn-primary" (click)="newUser()">New User</button></td>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersData  | employeeFilter:searchTerm">
+        <td>{{ user.employeeId }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.mobileNumber }}</td>
+        <td>{{ user.yearsOfExperience }}</td>
+        <td>{{ user.designation }}</td>
+        <td><button class="btn btn-danger" (click)="deleteUser(user)">Delete</button> &nbsp;
+          <button class="btn btn-primary" (click)="updateUser(user)">Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <td><button class="btn btn-primary" (click)="newUser()">New User</button></td>
 </div>

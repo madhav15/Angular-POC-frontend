@@ -36,4 +36,8 @@ export class UserformComponent implements OnInit {
     }
   }
 
+  back() {
+    this.router.navigate(["/"]);
+  }
+
 }

@@ -1,40 +1,73 @@
 <div class="container">
   <h1 class="display-3">Add/Update User</h1>
   <form (ngSubmit)="processForm()">
-    <div class="form-group">
-        <input type="hidden" name = "id" class="form-control" [(ngModel)] = "user.id">
-    </div>
 
     <div class="form-group">
+      <input type="hidden" name="id" class="form-control" [(ngModel)]="user.id">
+    </div>
+
+    <div class="form-group" [class.has-error]="employeeIdControl.invalid && employeeIdControl.touched">
       <label for="employeeId">Employee Id</label>
-        <input type="text" name = "employeeId" required class="form-control" [(ngModel)] = "user.employeeId">
+      <input type="number" name="employeeId" required class="form-control" [(ngModel)]="user.employeeId"
+        #employeeIdControl="ngModel">
+
+      <span class="help-block text-danger" *ngIf="employeeIdControl.invalid && employeeIdControl.touched">
+        Employee Id is required
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [class.has-error]="firstNameControl.invalid && firstNameControl.touched">
       <label for="firstName">Employee First Name</label>
-        <input type="text" name = "firstName" required class="form-control" [(ngModel)] = "user.firstName">
+      <input type="text" name="firstName" required class="form-control" [(ngModel)]="user.firstName" #firstNameControl="ngModel">
+
+      <span class="help-block text-danger" *ngIf="firstNameControl.invalid && firstNameControl.touched">
+        First Name is required
+      </span>
     </div>
 
-    <div class="form-group">
-        <label for="lastName">Employee Last Name</label>
-        <input type="text" name = "lastName" required class="form-control" [(ngModel)] = "user.lastName">
+    <div class="form-group" [class.has-error]="lastNameControl.invalid && lastNameControl.touched">
+      <label for="lastName">Employee Last Name</label>
+      <input type="text" name="lastName" required class="form-control" [(ngModel)]="user.lastName" #lastNameControl="ngModel">
+
+      <span class="help-block text-danger" *ngIf="lastNameControl.invalid && lastNameControl.touched">
+        Last Name is required
+      </span>
     </div>
 
-    <div class="form-group">
+
+    <div class="form-group" [class.has-error]="mobileNumberControl.invalid && mobileNumberControl.touched">
       <label for="mobileNumber">Mobile Number</label>
-      <input type="text" name = "mobileNumber" required class="form-control" [(ngModel)] = "user.mobileNumber">
+      <input type="text" name="mobileNumber" required class="form-control" [(ngModel)]="user.mobileNumber"
+        #mobileNumberControl="ngModel">
+
+      <span class="help-block text-danger" *ngIf="mobileNumberControl.invalid && mobileNumberControl.touched">
+        Mobile Number is required
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [class.has-error]="experienceControl.invalid && experienceControl.touched">
       <label for="yearsOfExperience">Total Experience</label>
-      <input type="number" name = "yearsOfExperience" required class="form-control" [(ngModel)] = "user.yearsOfExperience">
+      <input type="number" name="yearsOfExperience" required class="form-control" [(ngModel)]="user.yearsOfExperience"
+        #experienceControl="ngModel">
+
+      <span class="help-block text-danger" *ngIf="experienceControl.invalid && experienceControl.touched">
+        Experience in years is required
+      </span>
     </div>
 
-    <div class="form-group">
+
+    <div class="form-group" [class.has-error]="designationControl.invalid && designationControl.touched">
       <label for="designation">Designation</label>
-      <input type="text" name = "designation" required class="form-control" [(ngModel)] = "user.designation">
+      <input type="text" name="designation" required class="form-control" [(ngModel)]="user.designation"
+        #designationControl="ngModel">
+
+      <span class="help-block text-danger" *ngIf="designationControl.invalid && designationControl.touched">
+        Designation is required
+      </span>
     </div>
-  
+
     <input type="submit" value="Save" class="btn btn-success">
+    &nbsp;
+    <button class="btn btn-danger" (click)="back()">Cancel</button>
   </form>
 </div>
